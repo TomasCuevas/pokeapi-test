@@ -18,7 +18,9 @@ export const PokemonsContainer = () => {
       <SelectPokemonTypeSection />
 
       <section className="mt-10">
-        <h3 className="font-bold mb-5 text-xl">Lista de todos los pokemones</h3>
+        <h3 className="font-bold mb-5 text-xl sticky top-0 bg-slate-900/50 py-2 backdrop-blur-sm z-50">
+          Lista de todos los pokemones
+        </h3>
         <div className="grid justify-center items-center grid-cols-[repeat(auto-fill,minmax(150px,1fr))] md:grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-3">
           {pokemons.map((pokemon, index) => (
             <PokemonCard
@@ -29,18 +31,18 @@ export const PokemonsContainer = () => {
             />
           ))}
         </div>
-      </section>
 
-      <button
-        className="mx-auto bg-white text-xl w-full text-black font-semibold hover:scale-[1.02]  my-10 duration-200 py-2 rounded-xl"
-        disabled={isLoading}
-        onClick={() => {
-          if (isLoading) return;
-          increasePage();
-        }}
-      >
-        {isLoading ? "Cargando..." : "Obtener más"}
-      </button>
+        <button
+          className="mx-auto bg-white text-xl w-full text-black font-semibold hover:scale-[1.02]  my-10 duration-200 py-2 rounded-xl"
+          disabled={isLoading}
+          onClick={() => {
+            if (isLoading) return;
+            increasePage();
+          }}
+        >
+          {isLoading ? "Cargando..." : "Obtener más"}
+        </button>
+      </section>
     </>
   );
 };

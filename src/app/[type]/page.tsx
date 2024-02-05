@@ -32,7 +32,9 @@ const PokemonByTypePage: NextPage<Props> = async ({ params: { type } }) => {
       <SelectPokemonTypeSection />
 
       <section className="my-10">
-        <h3 className="font-bold mb-5 text-xl">Pokemones de tipo: {type}</h3>
+        <h3 className="font-bold mb-5 text-xl">
+          Pokemones de tipo: <b className="uppercase">{type}</b>
+        </h3>
         <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-3">
           {allPokemonsByType.map(({ id, img, name }) => (
             <PokemonCard
