@@ -16,6 +16,10 @@
   }
 }
 
+* {
+  font-family: var(--font-inter) sans-serif, Courier, monospace;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
